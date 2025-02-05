@@ -1,7 +1,7 @@
 
 import './App.css'
 import { useState, useEffect } from 'react'
-
+import Todo from './components/Todo'
 //interface todos
 interface TodoInterface {
   _id: string, 
@@ -13,7 +13,7 @@ interface TodoInterface {
 function App() {
 
   //states for the component
-  const [todos, setTodos] = useState<TodoInterface | []>([]); 
+  const [todos, setTodos] = useState<TodoInterface[] | []>([]); 
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -34,7 +34,12 @@ function App() {
 
       const data = await res.json();
 
-      setTodos(data);
+      //Get only tasks-array from API
+      if (Array.isArray(data.tasks)) {
+        setTodos(data.tasks);
+      } else {
+        throw new Error('Unexpected data format');
+      }
 
     } catch (error) {
 
@@ -51,6 +56,16 @@ function App() {
   return (
     <main>
       <h2>Checklist:</h2>
+
+      {loading && <p>Laddar...</p>}
+      {error && <p>{error}</p>} 
+
+      <div className='todos'>
+        { todos && todos.map((todo) => (
+            <Todo todo = {todo} key={todo._id}/>
+          ))}
+      </div>
+
     </main>
   )
 }
