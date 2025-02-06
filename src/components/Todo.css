@@ -1,0 +1,14 @@
+section {
+    width: 100%;
+    max-width: 600px;
+    margin: 5px auto;
+    background-color: rgb(46, 5, 85);
+    border-bottom: 1px solid rgb(201, 152, 247);
+    padding: 10px;
+    color: white;
+    text-align: left;
+}
+
+section h3 {
+    
+}
