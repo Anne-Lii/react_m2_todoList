@@ -1,3 +1,4 @@
+import './AddTodoForm.css'
 import React, { useState } from 'react';
 
 interface AddTodoFormProps {
@@ -34,7 +35,7 @@ const AddTodoForm = ({ onAddTodo }: AddTodoFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='AddForm' onSubmit={handleSubmit}>
       <label>Rubrik:</label>
       <br/>
         <input
@@ -63,8 +64,8 @@ const AddTodoForm = ({ onAddTodo }: AddTodoFormProps) => {
         </select>
       
       <br />
-      <button type="submit">+ Lägg till </button>
-      
+      <button type="submit">Spara </button>
+
     </form>
   );
 };

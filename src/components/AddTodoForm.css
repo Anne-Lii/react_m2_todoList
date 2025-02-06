@@ -1,0 +1,42 @@
+.AddForm {
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px ;
+    text-align: left;
+}
+
+.AddForm label {
+    font-size: 20px;
+}
+
+.AddForm input {
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    margin: 5px 0;
+    padding: 0;
+}
+
+.AddForm  select:hover{
+    cursor: pointer;
+    
+}
+
+.AddForm  button{
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    padding: 0;
+    background-color: rgb(128, 64, 187);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
+    margin-top: 20PX;
+}
+
+.AddForm  button:hover{
+    cursor: pointer;
+}
