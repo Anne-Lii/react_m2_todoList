@@ -64,7 +64,7 @@ function App() {
 
       <div className='todos'>
         { todos && todos.map((todo) => (
-            <Todo todo = {todo} key={todo._id}/>
+            <Todo todo = {todo} key={todo._id} onStatusUpdate={fetchData}/>
           ))}
       </div>
 
