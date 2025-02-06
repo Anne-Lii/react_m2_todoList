@@ -34,7 +34,7 @@ const Todo = ({todo, onStatusUpdate} : {todo: any, onStatusUpdate: Function}) =>
   }
 
   //remove todo
-  const removeTodo = async (event : any)=> { 
+  const removeTodo = async ()=> { 
 
     try {
       const res = await fetch('https://m2-api-1.onrender.com/task/' + todo._id, {
