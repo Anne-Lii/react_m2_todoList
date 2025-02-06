@@ -24,8 +24,15 @@ main h1 {
   font-style: normal;
   border: 1px solid white;
   border-radius: 5px;
+  box-shadow: 5px 5px 10px black;
   width: 100%;
   max-width: 150px;
   margin: auto;
   padding: 8px 20px;
+}
+
+.add_task_btn:hover {
+  cursor: pointer;
+  background-color: rgb(87, 1, 168);
+  box-shadow: none;
 }

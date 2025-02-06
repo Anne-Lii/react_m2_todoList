@@ -28,10 +28,11 @@
 .AddForm  button{
     width: 100%;
     height: 30px;
-    font-size: 18px;
+    font-size: 20px;
     padding: 0;
-    background-color: rgb(128, 64, 187);
+    background-color: rgb(46, 5, 85);
     color: white;
+    border: 1px solid white;
     border-radius: 5px;
     box-shadow: 5px 5px 10px black;
     margin-top: 20PX;
@@ -39,4 +40,6 @@
 
 .AddForm  button:hover{
     cursor: pointer;
+    box-shadow: none;
+    background-color: rgb(87, 1, 168);
 }
