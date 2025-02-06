@@ -1,5 +1,6 @@
 import './Todo.css'
 
+
 const Todo = ({todo} : {todo: any}) => {
 
   //colorchange on status
@@ -10,6 +11,18 @@ const Todo = ({todo} : {todo: any}) => {
         <h3>{todo.title}</h3>
         <p>{todo.description}</p>
         <p style={{color : statusColor}}><strong>{todo.status}</strong></p>
+
+        <form>
+          <label htmlFor="status">Ändra status: </label>
+          <br/>
+          <select name="status" id="status" defaultValue={todo.status}>
+          <option value="">-- Välj status --</option>
+            <option>Ej påbörjad</option>
+            <option>Påbörjad</option>
+            <option>Avklarad</option>
+          </select>
+        </form>
+
     </section>
   )
 }

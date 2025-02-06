@@ -3,12 +3,22 @@ section {
     max-width: 600px;
     margin: 5px auto;
     background-color: rgb(46, 5, 85);
-    border-bottom: 1px solid rgb(201, 152, 247);
+    border-bottom: 1px solid rgb(252, 128, 128);
     padding: 10px;
     color: white;
     text-align: left;
 }
 
-section h3 {
-    
+section p{
+    font-size: 18px;
+}
+
+form label {
+    font-size: 18px;
+}
+
+form select {
+    font-size: 16px;
+    padding: 3px 10px;
+    border-radius: 5px;
 }

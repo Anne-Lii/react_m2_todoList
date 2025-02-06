@@ -14,7 +14,7 @@ function App() {
 
   //states for the component
   const [todos, setTodos] = useState<TodoInterface[] | []>([]); 
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   //call function fetchData with useEffect
@@ -56,6 +56,8 @@ function App() {
   return (
     <main>
       <h2>Checklist:</h2>
+
+      <div className='add_task_btn'> + Add task</div>
 
       {loading && <p>Laddar...</p>}
       {error && <p>{error}</p>} 
