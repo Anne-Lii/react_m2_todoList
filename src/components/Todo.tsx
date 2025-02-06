@@ -1,7 +1,8 @@
 import './Todo.css'
 
 
-const Todo = ({todo, onStatusUpdate} : {todo: any, onStatusUpdate: GeneratorFunction}) => {
+
+const Todo = ({todo, onStatusUpdate} : {todo: any, onStatusUpdate: Function}) => {
 
   //colorchange on status
   const statusColor = todo.status ==='Ej påbörjad' ? 'rgb(250, 78, 78)' :todo.status ==='Pågående' ? 'rgb(252, 240, 81)' : 'rgb(106, 236, 113)'
@@ -32,6 +33,31 @@ const Todo = ({todo, onStatusUpdate} : {todo: any, onStatusUpdate: GeneratorFunc
   
   }
 
+  //remove todo
+  const removeTodo = async (event : any)=> { 
+
+    
+    try {
+      const res = await fetch('https://m2-api-1.onrender.com/task/' + todo._id, {
+        method: 'DELETE',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        
+      });
+
+      if (res.status!== 200) {
+        throw new Error('Failed to delete task');
+      }
+
+      onStatusUpdate(); //triggers parent component to fetchData
+      
+    } catch (error) {
+      console.error('Error deleting todo:', error);
+    }
+  
+  }
+
   return (
     <section>
         <h2>{todo.title}</h2>
@@ -47,6 +73,8 @@ const Todo = ({todo, onStatusUpdate} : {todo: any, onStatusUpdate: GeneratorFunc
             <option>Avklarad</option>
           </select>
         </form>
+
+        <div className='remove_btn' onClick={removeTodo}>Ta bort</div>
 
     </section>
   )

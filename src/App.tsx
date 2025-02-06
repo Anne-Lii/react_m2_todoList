@@ -43,7 +43,7 @@ function App() {
 
     } catch (error) {
 
-      setError('Failure fetching todos');
+      setError('There is no todos...');
 
     } finally {
 
