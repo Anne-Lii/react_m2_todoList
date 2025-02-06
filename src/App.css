@@ -11,7 +11,7 @@ main {
   padding-top: 150px;
 }
 
-main h2 {
+main h1 {
   font-family: "Henny Penny", serif;
     font-size: 46px;
     font-weight: 400;
@@ -19,6 +19,9 @@ main h2 {
 }
 
 .add_task_btn {
+  font-family: "Thasadith", serif;
+  font-weight: 600;
+  font-style: normal;
   border: 1px solid white;
   border-radius: 5px;
   width: 100%;

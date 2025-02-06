@@ -1,10 +1,14 @@
 section {
+    font-family: "Thasadith", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 18px;
     width: 100%;
     max-width: 600px;
     margin: 5px auto;
     background-color: rgb(46, 5, 85);
-    border-bottom: 1px solid rgb(252, 128, 128);
-    padding: 10px;
+    border-bottom: 1px solid white;
+    padding: 30px;
     color: white;
     text-align: left;
 }

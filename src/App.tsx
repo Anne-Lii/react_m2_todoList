@@ -55,7 +55,7 @@ function App() {
 
   return (
     <main>
-      <h2>Checklist:</h2>
+      <h1>Checklist:</h1>
 
       <div className='add_task_btn'> + Add task</div>
 
