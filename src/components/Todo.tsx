@@ -28,7 +28,7 @@ const Todo = ({todo, onStatusUpdate} : {todo: any, onStatusUpdate: Function}) =>
       onStatusUpdate(); //triggers parent component to fetchData
       
     } catch (error) {
-      
+      console.error('Error updating status:', error);
     }
   
   }
@@ -36,7 +36,6 @@ const Todo = ({todo, onStatusUpdate} : {todo: any, onStatusUpdate: Function}) =>
   //remove todo
   const removeTodo = async (event : any)=> { 
 
-    
     try {
       const res = await fetch('https://m2-api-1.onrender.com/task/' + todo._id, {
         method: 'DELETE',

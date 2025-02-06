@@ -2,6 +2,8 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import Todo from './components/Todo'
+import AddTodoForm from './components/AddTodoForm'
+
 //interface todos
 interface TodoInterface {
   _id: string, 
@@ -16,6 +18,7 @@ function App() {
   const [todos, setTodos] = useState<TodoInterface[] | []>([]); 
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [showForm, setShowForm] = useState<boolean>(false);
 
   //call function fetchData with useEffect
   useEffect(() => {
@@ -52,12 +55,37 @@ function App() {
     }
   }
 
+  const addTodo = async (newTodo: { title: string, description: string, status: string }) => {
+    try {
+      const res = await fetch('https://m2-api-1.onrender.com/task', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(newTodo)
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to add task');
+      }
+
+      fetchData(); //Re-fetch todos after adding a new one
+    } catch (error) {
+      console.error('Error adding todo:', error);
+    }
+  };
+
+  const ShowAddForm = () => {
+    setShowForm(!showForm);
+  };
+
 
   return (
     <main>
       <h1>Checklist:</h1>
 
-      <div className='add_task_btn'> + Add task</div>
+      <div className='add_task_btn' onClick={ShowAddForm}> + Lägg till </div>
+      {showForm && <AddTodoForm onAddTodo={addTodo} />}
 
       {loading && <p>Laddar...</p>}
       {error && <p>{error}</p>} 
