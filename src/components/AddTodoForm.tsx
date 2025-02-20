@@ -17,16 +17,17 @@ const AddTodoForm = ({ onAddTodo }: AddTodoFormProps) => {
     //object to store errors
     let validationErrors: { title?: string; description?: string } = {};
 
-    if (title.trim().length < 0) {
+    //validate title
+    if (title.trim().length === 0) {
       validationErrors.title = 'Du måste fylla i en rubrik';
-    }
-    if (title.trim().length < 3) {
+    } else if (title.trim().length < 3) {
       validationErrors.title = 'Rubriken måste vara minst tre bokstäver';
     }
-    if (description.trim().length < 0) {
-      validationErrors.title = 'Du måste skriva en beskrivning';
-    }
-    if (description.trim().length > 200) {
+
+    //Validate description
+    if (description.trim().length === 0) {
+      validationErrors.description = 'Du måste skriva en beskrivning';
+    } else if (description.trim().length > 200) {
       validationErrors.description = 'Beskrivningen får ej vara mer än 200 tecken lång.';
     }
       
